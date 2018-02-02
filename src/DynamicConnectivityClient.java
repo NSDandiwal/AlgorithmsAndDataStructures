@@ -3,10 +3,16 @@ public class DynamicConnectivityClient {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("inside program");
 		int N = StdIn.readInt();
-		System.out.println("declare N");
-		System.out.println("Value of N is " + N);
+		QuickFindUF uf = new QuickFindUF(N);
+		while(!StdIn.isEmpty()) {
+			int p = StdIn.readInt();
+			int q = StdIn.readInt();
+			if(!uf.connected(p, q)) {
+				uf.union(p, q);
+				StdOut.println(p + " " + q);
+			}
+		}
 		
 	}
 

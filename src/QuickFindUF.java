@@ -12,14 +12,13 @@ public class QuickFindUF {
 	
 	public void union(int p, int q){
 		int idp = id[p];
-		int idq = id[q];
+//		int idq = id[q]; possible bug in the system
 		for(int i = 0; i < id.length; i++){
 			 if(id[i] == idp) id[i] = id[q];
 		}
 	}
 	
-	public boolean find(int p, int q){
-		
-		return true;
+	public boolean connected(int p, int q){
+		return id[p] == id[q];
 	}
 }
