@@ -14,7 +14,6 @@ public class DynamicConnectivityClient {
 				StdOut.println(p + " " + q);
 			}
 		}
-		
 	}
 
 }
