@@ -1,28 +1,29 @@
 
-public class QuickFindUF {
-	
+public class QuickUnionUF {
 	private int id[];
 	
-	public QuickFindUF(int N) {
+	public QuickUnionUF(int N){
 		id = new int[N];
-		for (int i = 0; i < N; i++){
+		for(int i = 0; i < id.length; i++) {
 			id[i] = i;
 		}
 	}
 	
-	public void union(int p, int q){
-		int idp = id[p];
-//		int idq = id[q]; possible bug in the system
-		for(int i = 0; i < id.length; i++){
-			 if(id[i] == idp) id[i] = id[q];
-		}
+	private int root(int p) {
+		while(p != id[p]) p = id[p];
+		return p;
+	}
+	
+	public void union(int p, int q) {
+		int rootp = root(p);
+		id[rootp] = root(q);
 		printArray();
 		System.out.println();
 		System.out.println();
 	}
 	
-	public boolean connected(int p, int q){
-		return id[p] == id[q];
+	public boolean connected(int p, int q) {
+		return root(p) == root(q);
 	}
 	
 	public void printArray() {
