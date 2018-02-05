@@ -1,3 +1,6 @@
+import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.StdStats;
+import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class DynamicConnectivityClient {
 
@@ -14,9 +17,11 @@ public class DynamicConnectivityClient {
 		uf.union(5, 0);
 		uf.union(7, 2);
 		uf.union(6, 1);
+		uf.union(4, 5);
 		System.out.println(uf.connected(3, 2));
 		System.out.println(uf.connected(4, 3));
 		System.out.println(uf.connected(4, 5));
+		
 		uf.printSizeArray();
 	}
 

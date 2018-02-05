@@ -28,7 +28,6 @@ public class QuickUnionWeightedUF {
 			id[rootq] = rootp;
 			sz[rootp] += sz[rootq];
 		}
-		id[rootp] = root(q);
 		printArray();
 		System.out.println();
 		System.out.println();
@@ -54,7 +53,7 @@ public class QuickUnionWeightedUF {
 		}
 		System.out.println();
 		for(int i = 0; i < sz.length; i++) {
-			System.out.print(id[i] + "\t");
+			System.out.print(sz[i] + "\t");
 		}
 	}
 }
