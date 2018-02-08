@@ -1,6 +1,10 @@
+import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.StdStats;
+import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
 	private int id[][];
+	private WeightedQuickUnionUF uf;
 	
 	// create n-by-n grid, with all sites blocked
 	public Percolation(int N){
@@ -14,7 +18,14 @@ public class Percolation {
 	
 	// open site (row, col) if it is not open already
 	public void open(int row, int col) {
-		id[row][col] = 1;
+		if(row == 0) {
+			id[row][col] = 1;
+			uf.union(0, row+col+1);
+		} else if(row == id.length - 1) {
+			
+		} else {
+			
+		}
 	}
 	
 	// is site (row, col) open?
@@ -23,7 +34,7 @@ public class Percolation {
 	}
 	
 	// is site (row, col) full?
-	public boolean isFull() {
+	public boolean isFull(int row, int col) {
 		return false;
 	}
 	
